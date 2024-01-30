@@ -13,7 +13,7 @@ namespace Core.Persistance.Repositories;
 //hangi tip ile calısacağımı bu interface 'i cağırırken belirtilecek
 //aynı zamanda id 'nin veri tipinide belirtmem gerekiyor, Guid mesela olabiliyordu.
 //where kosulu ile belirtilen TEntityId -> TEntity 'nin id 'si olmalı diyorum,yani farklı bir id veri tipi yazamasın
-public interface IAsyncRepository<TEntity,TEntityId> where TEntity : Entity<TEntityId> 
+public interface IAsyncRepository<TEntity,TEntityId> : IQuery<TEntity> where TEntity : Entity<TEntityId> 
 {
 	Task<TEntity?> GetAsync(
 		Expression<Func<TEntity,bool>> predicate, //get yaparken lambda ile datayı alabilirim
