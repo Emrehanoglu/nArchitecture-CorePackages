@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34004.107
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Persistance", "Core.Persistance\Core.Persistance.csproj", "{0A319C14-73EE-4721-B576-03C736B33642}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistance", "Core.Persistance\Core.Persistance.csproj", "{0A319C14-73EE-4721-B576-03C736B33642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application", "Core.Application\Core.Application.csproj", "{1343FA4F-2FD9-4750-ADC3-8E7DD2DD36C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0A319C14-73EE-4721-B576-03C736B33642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A319C14-73EE-4721-B576-03C736B33642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A319C14-73EE-4721-B576-03C736B33642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1343FA4F-2FD9-4750-ADC3-8E7DD2DD36C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1343FA4F-2FD9-4750-ADC3-8E7DD2DD36C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1343FA4F-2FD9-4750-ADC3-8E7DD2DD36C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1343FA4F-2FD9-4750-ADC3-8E7DD2DD36C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
