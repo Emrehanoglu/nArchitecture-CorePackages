@@ -115,10 +115,7 @@ public class EfRepositoryBase<TEntity,TEntityId,TContext>:IAsyncRepository<TEnti
 		return await queryable.ToPaginateAsync(index, size, cancellationToken);
 	}
 
-	public IQueryable<TEntity> Query()
-	{
-		throw new NotImplementedException();
-	}
+	public IQueryable<TEntity> Query() => Context.Set<TEntity>();
 
 	public async Task<TEntity> UpdateAsync(TEntity entity)
 	{
