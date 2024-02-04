@@ -13,7 +13,7 @@ public class Filter
     public string Operator { get; set; } //filtre alanının operatoru nedir, yani string bir ifade için, eşitti veya içinde bulunan mı
                                           //integer bir ifade için büyüktür küçüktür mü vs.
     public string? Logic{ get; set; } //birden fazla filtre olduğu zaman and,or ilişkisi kurmak için
-    public IEnumerable<Filter> Filters { get; set;} // filtre listesi
+    public IEnumerable<Filter>? Filters { get; set;} // filtre listesi
 
     //yardımcı ctor
     public Filter()
