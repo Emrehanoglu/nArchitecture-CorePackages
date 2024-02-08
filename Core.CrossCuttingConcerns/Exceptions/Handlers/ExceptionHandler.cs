@@ -15,10 +15,12 @@ public abstract class ExceptionHandler
 		exception switch
 		{
 			BusinessException businessException => HandleException(businessException), //gelen Exception, Business type 'ında ise
+			ValidationException validationException => HandleException(validationException),
 			_ => HandleException(exception) //gelen Exception switch içerisindeki Type 'lardan birini karşılamıyor ise
 		};
 
 	//hangi ortam class 'ı ExceptionHandler 'ı inherit ederse aşağıdaki class 'ı kullanarak hata yönetimi yapabilecek.
 	protected abstract Task HandleException(BusinessException businessException); //gelen Exception, Business ise burası calısacak
+	protected abstract Task HandleException(ValidationException validationException);
 	protected abstract Task HandleException(Exception exception); //gelen Exception herhangi bir Type 'ı karsılamıyor ise burası calısacak
 }

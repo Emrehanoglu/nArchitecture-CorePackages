@@ -2,11 +2,13 @@
 using Core.CrossCuttingConcerns.Exceptions.HttpProblemDetails;
 using Core.CrossCuttingConcerns.Exceptions.Types;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ValidationProblemDetails = Core.CrossCuttingConcerns.Exceptions.HttpProblemDetails.ValidationProblemDetails;
 
 namespace Core.CrossCuttingConcerns.Exceptions.Handlers;
 
@@ -34,6 +36,16 @@ public class HttpExceptionHandler : ExceptionHandler
 
 		//bir iş kuralı problemi oluştuğunda JSON formatında bunu dönmek istiyorum
 		string details = new InternalServerErrorProblemDetails(exception.Message).AsJson(); //JSON formatında olması lazım
+
+		return Response.WriteAsync(details);
+	}
+
+	protected override Task HandleException(ValidationException validationException)
+	{
+		Response.StatusCode = StatusCodes.Status400BadRequest;
+
+		//bir iş kuralı problemi oluştuğunda JSON formatında bunu dönmek istiyorum
+		string details = new ValidationProblemDetails(validationException.Errors).AsJson(); //JSON formatında olması lazım
 
 		return Response.WriteAsync(details);
 	}
